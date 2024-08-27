@@ -1,3 +1,9 @@
+import { SignIn } from "@clerk/clerk-react";
+
 export default function SignInPage() {
-    return <h1 className="text-4xl">Sign in Page</h1>;
+    return (
+        <div className="w-full h-screen flex justify-center items-center">
+            <SignIn />
+        </div>
+    );
 }
