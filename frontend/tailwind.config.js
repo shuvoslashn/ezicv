@@ -28,8 +28,8 @@ module.exports = {
                     foreground: "#ffffff",
                 },
                 secondary: {
-                    DEFAULT: "0F2844",
-                    foreground: "hsl(var(--secondary-foreground))",
+                    DEFAULT: "#0F2844",
+                    foreground: "#fff",
                 },
                 destructive: {
                     DEFAULT: "hsl(var(--destructive))",

@@ -66,9 +66,21 @@
 
 @layer base {
     * {
-        @apply border-border;
+        @apply border-border text-gray-600 dark:text-gray-300 leading-7;
     }
     body {
         @apply bg-background text-foreground;
     }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-secondary dark:text-white font-bold leading-5;
+    }
+}
+
+.cl-userButtonPopoverFooter.🔒️.cl-internal-d50gl1 {
+    display: none !important;
 }
