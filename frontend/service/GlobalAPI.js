@@ -1,4 +1,5 @@
-const { default: axios } = require("axios");
+// const { default: axios } = require("axios");
+import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_STRAPI_API_KEY;
 

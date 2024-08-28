@@ -29,7 +29,7 @@ module.exports = {
                 },
                 secondary: {
                     DEFAULT: "#0F2844",
-                    foreground: "#fff",
+                    foreground: "#ffffff",
                 },
                 destructive: {
                     DEFAULT: "hsl(var(--destructive))",
@@ -41,7 +41,7 @@ module.exports = {
                 },
                 accent: {
                     DEFAULT: "hsl(var(--accent))",
-                    foreground: "hsl(var(--accent-foreground))",
+                    foreground: "#ffffff",
                 },
                 popover: {
                     DEFAULT: "hsl(var(--popover))",
