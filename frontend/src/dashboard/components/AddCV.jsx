@@ -16,11 +16,13 @@ import { v4 as uuidv4 } from "uuid";
 import GlobalAPI from "../../../service/GlobalAPI";
 import { useUser } from "@clerk/clerk-react";
 import Loading from "../../components/custom/Loading";
+import { useNavigate } from "react-router-dom";
 
 export default function AddCV() {
     const [cvTitle, setCvTitle] = useState("");
     const [loading, setLoading] = useState(false);
     const { user } = useUser();
+    const navigation = useNavigate();
 
     const onCreate = () => {
         setLoading(true);
@@ -33,10 +35,14 @@ export default function AddCV() {
                 userName: user?.fullName,
             },
         };
-        GlobalAPI.CreateNewResume(data).then(
+        GlobalAPI.CreateNewCV(data).then(
             (resp) => {
-                resp && setLoading(false);
-                console.log(resp);
+                if (resp) {
+                    setLoading(false);
+                    navigation(
+                        `/dashboard/cv/${resp.data.data.documentId}/edit`
+                    );
+                }
             },
             (error) => {
                 setLoading(false);
@@ -52,7 +58,7 @@ export default function AddCV() {
             ) : (
                 <Dialog>
                     <DialogTrigger asChild>
-                        <div className="w-full rounded-md p-8 border flex items-center justify-center bg-zinc-100 border-dashed min-h-72 cursor-pointer hover:scale-[1.03] hover:bg-zinc-200 transition-all duration-300">
+                        <div className="w-full rounded-md p-8 border flex items-center justify-center bg-zinc-100 border-dashed min-h-60 cursor-pointer hover:scale-[1.03] hover:bg-zinc-200 transition-all duration-300">
                             <PlusIcon className="text-3xl" />
                         </div>
                     </DialogTrigger>

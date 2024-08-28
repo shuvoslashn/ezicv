@@ -11,8 +11,14 @@ const axiosClient = axios.create({
     },
 });
 
-const CreateNewResume = (data) => axiosClient.post("/user-cvs", data);
+// create new cv function
+const CreateNewCV = (data) => axiosClient.post("/user-cvs", data);
+
+// get user cv function
+const GetUserCVs = (userEmail) =>
+    axiosClient.get("/user-cvs?filter[userEmail][$eq]=" + userEmail);
 
 export default {
-    CreateNewResume,
+    CreateNewCV,
+    GetUserCVs,
 };
